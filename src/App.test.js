@@ -95,3 +95,4 @@ test.each(['/books/99', '/books/abc'])('unknown detail %s', async path => {
   expect(container.textContent).toContain('Không tìm thấy sách');
   expect(container.querySelectorAll('nav .active')).toHaveLength(0);
 });
+

@@ -61,3 +61,4 @@ Code ở gốc repo. Chỉ nộp link sau khi kiểm tra repo public và `npm ru
 - Đã kiểm tra trên trình duyệt: thống kê ban đầu, danh sách 6 sách, cho mượn rồi tải lại vẫn giữ dữ liệu, tìm `CODE` chỉ còn Clean Code sau thời gian chờ.
 - Ảnh giao diện: `preview.jpg`.
 - Nếu cổng 3000 đang bận: `PORT=3001 npm start`.
+

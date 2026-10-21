@@ -15,3 +15,4 @@ const BookList = ({ books, onDelete, onToggle }) => {
   return <section><div className="eyebrow">DANH MỤC THƯ VIỆN</div><div className="page-title"><div><h1>Danh sách sách</h1><p>Tìm sách và quản lý mượn trả trong một nơi.</p></div><Link className="button" to="/books/new">+ Thêm mới</Link></div><div className="panel"><FilterBar keyword={keyword} category={category} onQueryChange={handleQueryShift} onCategoryChange={({ target: { value } }) => setCategory(value)} searching={keyword !== debouncedKeyword} /><p className="count" aria-live="polite">{`Tìm thấy ${filteredBooks.length} cuốn sách`}</p><BookTable books={filteredBooks} onDelete={onDelete} onToggle={onToggle} /></div></section>;
 };
 export default BookList;
+

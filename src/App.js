@@ -57,3 +57,4 @@ const App = () => {
   return <div data-build={BUILD_TAG}><Routes><Route path="/" element={<Layout />}><Route index element={content(<Home books={books} />)} /><Route path="books" element={content(<BookList books={books} onDelete={deleteBook} onToggle={toggleBook} />)} /><Route path="books/new" element={content(<AddBook onAdd={addBook} />)} /><Route path="books/:id" element={content(<BookDetail books={books} />)} /><Route path="*" element={<p>Không tìm thấy trang</p>} /></Route></Routes></div>;
 };
 export default App;
+

@@ -10,3 +10,4 @@ const Home = ({ books }) => {
   </section>;
 };
 export default Home;
+
