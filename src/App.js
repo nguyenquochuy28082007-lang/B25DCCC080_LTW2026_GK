@@ -1,4 +1,5 @@
 const BUILD_TAG = "qf-2817";
+/* eslint-disable import/first */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
@@ -25,9 +26,29 @@ const App = () => {
         if (!controller.signal.aborted) setLoading(false);
       }
     };
+    // Dữ liệu đã lưu được ưu tiên; dữ liệu hỏng sẽ tải lại từ API.
+    try {
+      const saved = localStorage.getItem('gk_books');
+      if (saved !== null) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.every(book => book && Number.isInteger(book.id) && typeof book.title === 'string' && typeof book.author === 'string' && Number.isInteger(book.year) && typeof book.category === 'string' && typeof book.available === 'boolean')) {
+          setBooks(parsed);
+          setLoading(false);
+          return () => controller.abort();
+        }
+      }
+    } catch {
+      // Trình duyệt chặn lưu trữ hoặc JSON hỏng: vẫn dùng được API.
+    }
     loadBooks();
     return () => controller.abort();
   }, []);
+  useEffect(() => {
+    if (!loading && !error) {
+      try { localStorage.setItem('gk_books', JSON.stringify(books)); }
+      catch { /* Vẫn cho phép sử dụng khi trình duyệt chặn lưu trữ. */ }
+    }
+  }, [books, loading, error]);
   const addBook = book => setBooks(current => [...current, { ...book, id: current.reduce((max, { id }) => Math.max(max, id), 0) + 1 }]);
   const deleteBook = id => setBooks(current => current.filter(book => book.id !== id));
   const toggleBook = id => setBooks(current => current.map(book => book.id === id ? { ...book, available: !book.available } : book));
