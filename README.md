@@ -27,9 +27,11 @@ Mở http://localhost:3000. Tạo bản production bằng `npm run build`.
 
 `App` giữ state và hàm thay đổi sách, khai báo routes. `Layout` chứa `NavBar` và `Outlet`. `BookList` giữ state lọc, dùng `FilterBar` và `BookTable`; bảng render `BookRow` bằng map và key. `AddBook` là controlled form. `BookDetail` dùng useParams, Number và find.
 
-## Lưu ý dữ liệu mẫu
+## Đối chiếu đề gốc
 
-Văn bản đề cung cấp bị cắt ngay ở cuốn số 3. Dữ liệu số 3–6 được bổ sung theo các ví dụ trong đề, bảo đảm 6 sách, 2 đang mượn, năm mới nhất 2015, 2 cuốn Văn học và có Clean Code, Vũ trụ. Cần đối chiếu với JSON nguyên bản trước khi nộp.
+Đã đối chiếu bản PDF đầy đủ: dữ liệu 6 cuốn đúng mục 3.1; có `src/data.js`, `src/App.css`, các component tách file riêng và `student.json`. Thông tin sinh viên: Nguyễn Quốc Huy — B25DCCC080 — D23CQCC02 — DE1.
+
+Nếu đã chạy bản dữ liệu cũ, xóa key `gk_books` trong localStorage rồi tải lại để nhận dữ liệu mẫu đúng. Ứng dụng giữ nguyên dữ liệu người dùng đã lưu theo yêu cầu đề.
 
 ## Kiểm tra thủ công
 

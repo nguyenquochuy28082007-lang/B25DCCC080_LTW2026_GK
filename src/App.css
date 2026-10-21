@@ -30,8 +30,8 @@ p{line-height:1.8;color:#738078}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .stats article{padding:25px;background:white;border:1px solid #e0e6dc;border-radius:9px}
 .stat-label{font-size:12px;color:#738078}
-.stat-label strong{display:block;font-size:35px;color:#234f3e;margin:14px 0;letter-spacing:-1px}
-.stats small{font-size:11px;color:#929b91}
+.stat-label strong{font-size:18px;color:#234f3e;margin-left:5px;letter-spacing:-0.5px}
+.stats small{display:block;margin-top:16px;font-size:11px;color:#929b91}
 .note{margin-top:32px;padding:28px 30px;display:flex;align-items:center;justify-content:space-between;border:1px solid #dfe5db;border-radius:9px;gap:20px}
 .note h2{font-size:16px;margin:0}
 .note p{margin:7px 0 0;font-size:12px}
